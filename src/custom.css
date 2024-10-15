@@ -1,0 +1,71 @@
+body,
+html {
+    min-height: 100%;
+}
+
+body {
+    background: url(/public/background.png);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.bg-body-tertiary {
+    background-color: #181719b3 !important;
+}
+
+.nav-link {
+    color: #fff;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: #fff;
+}
+
+.navbar-toggler-icon {
+    background-image: url(/public/menu.png);
+}
+
+.banner {
+    height: 400px;
+}
+
+/* sm */
+@media only screen and (min-width: 576px) {
+    .banner {
+        height: 500px;
+    }
+}
+
+/* md */
+@media only screen and (min-width: 768px) {
+    .banner {
+        height: 600px;
+    }
+}
+
+/* lg */
+@media only screen and (min-width: 992px) {
+    .banner {
+        height: 600px;
+    }
+
+    .mobile-scrollable-section {
+        overflow: unset;
+    }
+
+    .new-character-tile {
+        width: 130px;
+        height: 78px;
+    }
+}
+
+/* xl */
+@media only screen and (min-width: 1200px) {
+}
+
+/* xxl */
+@media only screen and (min-width: 1400px) {
+}
