@@ -1,4 +1,6 @@
 import Banner from '../components/Banner';
+import BottomLines from '../components/BottomLines';
+import Footer from '../components/Footer';
 import Header from '../components/Header';
 import PageTitle from '../components/PageTitle';
 
@@ -8,6 +10,8 @@ const MarketplacePage = () => {
             <PageTitle title='Marketplace' />
             <Header />
             <Banner />
+            <BottomLines />
+            <Footer />
         </>
     );
 };
