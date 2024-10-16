@@ -32,6 +32,21 @@ body {
     height: 400px;
 }
 
+input[type=text], input[type=email] {
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.form-control {
+    background: transparent;
+    color: #fff;
+}
+
+.form-control::placeholder {
+    background: transparent;
+    color: #ccc;
+}
+
 /* sm */
 @media only screen and (min-width: 576px) {
     .banner {
@@ -52,18 +67,30 @@ body {
         height: 600px;
     }
 
+    .banner > .new-arrival {
+        width: 40%;
+    }
+
     .mobile-scrollable-section {
         overflow: unset;
     }
 
     .new-character-tile {
-        width: 130px;
-        height: 78px;
+        width: 100px;
+        height: 60px;
+    }
+
+    .bottom-lines {
+        background-size: cover;
     }
 }
 
 /* xl */
 @media only screen and (min-width: 1200px) {
+    .new-character-tile {
+        width: 150px;
+        height: 90px;
+    }
 }
 
 /* xxl */
