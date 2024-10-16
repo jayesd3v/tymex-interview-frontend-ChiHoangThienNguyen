@@ -1,0 +1,15 @@
+footer {
+    background: #16171A;
+    color: #fff;
+    font-size: 0.8em;
+}
+
+footer .title {
+    font-weight: bold;
+}
+
+footer a{
+    color: #fff;
+    text-decoration: none;
+    margin: 0 5px;
+}
