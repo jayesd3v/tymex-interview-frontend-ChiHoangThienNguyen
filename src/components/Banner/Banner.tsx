@@ -28,20 +28,30 @@ const NEW_CHARACTERS: NewCharacterTileProps[] = [
 ];
 
 const Banner = () => {
-    const renderNewCharacters = () => (
-        <div className='mobile-scrollable-section pt-5 pb-5 ps-5'>
-            <div className='d-flex'>
-                {NEW_CHARACTERS.map(({ character, name }: NewCharacterTileProps, index) => (
-                    <NewCharacterTile
-                        key={character}
-                        character={character}
-                        name={name}
-                        className={clsx(index === 0 && 'd-lg-none')}
-                    />
-                ))}
+    const renderNewCharacters = () =>
+        NEW_CHARACTERS.length && (
+            <div className='mobile-scrollable-section pt-5 pb-5 ps-5'>
+                <div className='d-flex'>
+                    {NEW_CHARACTERS.map(({ character, name }: NewCharacterTileProps, index) => (
+                        <NewCharacterTile
+                            key={character}
+                            character={character}
+                            name={name}
+                            className={clsx(index === 0 && 'd-lg-none')}
+                        />
+                    ))}
+                </div>
             </div>
-        </div>
-    );
+        );
+
+    const renderSpotlightCharacter = () => {
+        const { character, name } = NEW_CHARACTERS[0];
+        return (
+            <div className='d-none d-lg-block spotlight-character'>
+                <div className='image' style={{ backgroundImage: `url(/${character}.png)` }}></div>
+            </div>
+        );
+    };
 
     return (
         <div className='banner'>
@@ -49,7 +59,10 @@ const Banner = () => {
                 <img src='/new-arrival.png' alt='new-arrival' />
             </div>
             <div className='banner-holder'>
-                <Container className='pt-3 pt-xl-3'>{renderNewCharacters()}</Container>
+                <Container className='pt-3 pt-xl-3'>
+                    {renderNewCharacters()}
+                    {renderSpotlightCharacter()}
+                </Container>
             </div>
         </div>
     );

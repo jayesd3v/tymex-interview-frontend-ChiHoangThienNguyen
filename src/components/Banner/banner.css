@@ -44,3 +44,21 @@
     overflow-x: scroll;
     overflow-y: hidden;
 }
+
+.spotlight-character {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 20%;
+}
+
+.spotlight-character > .image {
+    background-size: cover;
+    height: 200%;
+    transform: scaleX(-1);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 150%;
+}
