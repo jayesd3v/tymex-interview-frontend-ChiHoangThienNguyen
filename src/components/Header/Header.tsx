@@ -8,11 +8,11 @@ const Header = () => {
                 <Navbar.Toggle aria-controls='navbarScroll' />
                 <Navbar.Collapse id='navbarScroll'>
                     <Nav className='me-auto my-2 my-lg-0' navbarScroll>
-                        <Nav.Link href='#action1'>HOME</Nav.Link>
-                        <Nav.Link href='#action2'>ABOUT US</Nav.Link>
-                        <Nav.Link href='#action2'>OUR TEAMS</Nav.Link>
-                        <Nav.Link href='#action2'>MARKETPLACE</Nav.Link>
-                        <Nav.Link href='#action2'>WHITEPAPER</Nav.Link>
+                        <Nav.Link href='/'>HOME</Nav.Link>
+                        <Nav.Link href='/'>ABOUT US</Nav.Link>
+                        <Nav.Link href='/'>OUR TEAMS</Nav.Link>
+                        <Nav.Link href='/marketplace'>MARKETPLACE</Nav.Link>
+                        <Nav.Link href='/'>WHITEPAPER</Nav.Link>
                     </Nav>
                     <Form className='d-flex'>
                         <Button variant='outline-success'>Connect Wallet</Button>
