@@ -41,5 +41,6 @@
     font-weight: bold;
     position: absolute;
     bottom: -35px;
-    width: 100%;
+    left: -10%;
+    width: 120%;
 }
