@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { CardProps } from '../../components/Card/Card';
 import { FilterState } from '../filterReducer';
 
-const { REACT_APP_BACKEND_ORIGIN } = process.env;
+const { REACT_APP_BACKEND_ORIGIN, REACT_APP_FETCH_LIMIT, } = process.env;
 
 const orderMap: any = {
     Lowest: 'asc',
@@ -14,13 +14,14 @@ const orderMap: any = {
 interface FetchProps {
     filters: FilterState;
     nextPage: number;
+    replace?: boolean;
 }
 
 export interface ResultState {
     data: CardProps[];
     loading: boolean;
     error: boolean;
-    nextPage: number;
+    currentPage: number;
     hasNext: boolean;
 }
 
@@ -28,6 +29,7 @@ export const fetchResults = createAsyncThunk(`fetchResults`, async (args: FetchP
     const {
         filters: { keyword, tier, sortByPrice, sortByTime },
         nextPage,
+        replace = false,
     } = args;
     const queryParams = new URLSearchParams();
     if (keyword.trim()) {
@@ -36,10 +38,10 @@ export const fetchResults = createAsyncThunk(`fetchResults`, async (args: FetchP
     if (tier) {
         queryParams.append('tier', tier);
     }
-    queryParams.append('_sort', 'createdDate,price');
-    queryParams.append('_order', `${orderMap[sortByTime]},${orderMap[sortByPrice]}`);
-    queryParams.append('_limit', '20');
-    queryParams.append('_page', String(nextPage));
+    queryParams.append('_sort', 'price,createdAt');
+    queryParams.append('_order', `${orderMap[sortByPrice]},${orderMap[sortByTime]}`);
+    queryParams.append('_limit', replace ? String(nextPage * parseInt(REACT_APP_FETCH_LIMIT as string)) : REACT_APP_FETCH_LIMIT as string);
+    queryParams.append('_page', replace ? '1' : String(nextPage));
 
     const response = await fetch(`${REACT_APP_BACKEND_ORIGIN}/products?${queryParams.toString()}`);
     return response?.json();
@@ -49,7 +51,7 @@ const initialState: ResultState = {
     data: [],
     loading: false,
     error: false,
-    nextPage: 1,
+    currentPage: 1,
     hasNext: true,
 };
 
@@ -64,21 +66,35 @@ const resultSlice = createSlice({
             state.data = action.payload;
         },
         resetResult(state: any) {
-            state = { ...initialState };
+            state.data = [];
+            state.currentPage = 0;
+            state.hasNext = true;
         },
     },
     extraReducers: (builder) => {
-        builder.addCase(fetchResults.pending, (state) => {
-            state.loading = true;
+        builder.addCase(fetchResults.pending, (state, action) => {
+            const { replace } = action.meta.arg;
+            if (!replace) {
+                // don't let user know we're auto-reloading whole data
+                state.loading = true;
+            }
         });
         builder.addCase(fetchResults.fulfilled, (state, action) => {
+            const { nextPage, replace } = action.meta.arg;
             state.loading = false;
             state.error = false;
             if (action.payload.length) {
-                state.data.push(...action.payload);
-                state.nextPage++;
-                state.hasNext = true;
+                if (replace) {
+                    // replace data with new data and leave everything else as they are
+                    state.data = action.payload;
+                } else {
+                    // append new data to existing data
+                    state.data.push(...action.payload);
+                    state.currentPage = nextPage;
+                    state.hasNext = true;
+                }
             } else {
+                // last time we got no data, so no need to fetch again
                 state.hasNext = false;
             }
         });
