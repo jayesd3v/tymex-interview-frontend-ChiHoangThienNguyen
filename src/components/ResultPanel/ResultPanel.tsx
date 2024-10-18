@@ -1,245 +1,88 @@
-import { Row } from 'react-bootstrap';
+import { Alert, Button, Row, Toast, ToastContainer } from 'react-bootstrap';
 import Card from '../Card';
 import { CardProps } from '../Card/Card';
-
-const cards: CardProps[] = [
-    {
-        id: 1,
-        title: 'Metal Gear Girl',
-        category: 'Mythic',
-        price: 30.09,
-        isFavorite: false,
-        createdAt: 1624533946000,
-        theme: 'Halloween',
-        tier: 'Premium',
-        imageId: 8,
-        author: {
-            firstName: 'Dewie',
-            lastName: 'Labeuil',
-            email: 'dlabeuilv@nba.com',
-            gender: 'Male',
-            avatar: 'https://robohash.org/nihiltotamdolorem.png?size=100x100&set=set1',
-            onlineStatus: 'idle',
-        },
-    },
-    {
-        id: 2,
-        title: 'Rhythm Ruler',
-        category: 'Epic',
-        price: 52.57,
-        isFavorite: true,
-        createdAt: 1652687980000,
-        theme: 'Halloween',
-        tier: 'Deluxe',
-        imageId: 11,
-        author: {
-            firstName: 'Thaddeus',
-            lastName: 'Tumulty',
-            email: 'ttumultyt@t-online.de',
-            gender: 'Male',
-            avatar: 'https://robohash.org/perferendisitaquedolor.png?size=100x100&set=set1',
-            onlineStatus: 'offline',
-        },
-    },
-    {
-        id: 3,
-        title: 'DJ Phantom',
-        category: 'Accessory',
-        price: 69.39,
-        isFavorite: true,
-        createdAt: 1695115094000,
-        theme: 'Halloween',
-        tier: 'Premium',
-        imageId: 15,
-        author: {
-            firstName: 'Alexis',
-            lastName: 'Blandamore',
-            email: 'ablandamore13@blog.com',
-            gender: 'Female',
-            avatar: 'https://robohash.org/expeditanostrumcommodi.png?size=100x100&set=set1',
-            onlineStatus: 'idle',
-        },
-    },
-    {
-        id: 4,
-        title: 'Digital Samurai',
-        category: 'Shoes',
-        price: 35.12,
-        isFavorite: true,
-        createdAt: 1713615484000,
-        theme: 'Colorful',
-        tier: 'Premium',
-        imageId: 2,
-        author: {
-            firstName: 'Dennis',
-            lastName: 'Rosenshine',
-            email: 'drosenshinem@google.ca',
-            gender: 'Male',
-            avatar: 'https://robohash.org/etaccusantiumminus.png?size=100x100&set=set1',
-            onlineStatus: 'online',
-        },
-    },
-    {
-        id: 5,
-        title: 'Neon Samurai',
-        category: 'Epic',
-        price: 127.26,
-        isFavorite: false,
-        createdAt: 1600481938000,
-        theme: 'Light',
-        tier: 'Basic',
-        imageId: 18,
-        author: {
-            firstName: 'Burch',
-            lastName: 'Stapleford',
-            email: 'bstaplefordo@mozilla.org',
-            gender: 'Male',
-            avatar: 'https://robohash.org/eaquisoluta.png?size=100x100&set=set1',
-            onlineStatus: 'idle',
-        },
-    },
-    {
-        id: 6,
-        title: 'Bassbreaker',
-        category: 'Lower Body',
-        price: 161.04,
-        isFavorite: true,
-        createdAt: 1715002382000,
-        theme: 'Dark',
-        tier: 'Premium',
-        imageId: 6,
-        author: {
-            firstName: 'Mead',
-            lastName: 'Niccols',
-            email: 'mniccols5@ameblo.jp',
-            gender: 'Male',
-            avatar: 'https://robohash.org/quoindolore.png?size=100x100&set=set1',
-            onlineStatus: 'idle',
-        },
-    },
-    {
-        id: 7,
-        title: 'The Code Assassin',
-        category: 'Upper Body',
-        price: 65.12,
-        isFavorite: true,
-        createdAt: 1602953382000,
-        theme: 'Colorful',
-        tier: 'Basic',
-        imageId: 2,
-        author: {
-            firstName: 'Gradey',
-            lastName: 'Birds',
-            email: 'gbirds1c@sphinn.com',
-            gender: 'Male',
-            avatar: 'https://robohash.org/iustoquiadolorem.png?size=100x100&set=set1',
-            onlineStatus: 'online',
-        },
-    },
-    {
-        id: 8,
-        title: 'Bassline Bandit',
-        category: 'Epic',
-        price: 185.59,
-        isFavorite: true,
-        createdAt: 1581193622000,
-        theme: 'Dark',
-        tier: 'Basic',
-        imageId: 9,
-        author: {
-            firstName: 'Rockey',
-            lastName: 'Stoddart',
-            email: 'rstoddartn@bandcamp.com',
-            gender: 'Male',
-            avatar: 'https://robohash.org/verovoluptatemblanditiis.png?size=100x100&set=set1',
-            onlineStatus: 'offline',
-        },
-    },
-    {
-        id: 9,
-        title: 'The Beat Vanguard',
-        category: 'Epic',
-        price: 193.99,
-        isFavorite: true,
-        createdAt: 1589762208000,
-        theme: 'Light',
-        tier: 'Basic',
-        imageId: 16,
-        author: {
-            firstName: 'Valdemar',
-            lastName: 'Gertray',
-            email: 'vgertrayj@comsenz.com',
-            gender: 'Male',
-            avatar: 'https://robohash.org/faciliseaqueeum.png?size=100x100&set=set1',
-            onlineStatus: 'idle',
-        },
-    },
-    {
-        id: 10,
-        title: 'The Neon Enforcer',
-        category: 'Epic',
-        price: 67.59,
-        isFavorite: true,
-        createdAt: 1622284811000,
-        theme: 'Halloween',
-        tier: 'Basic',
-        imageId: 17,
-        author: {
-            firstName: 'Leopold',
-            lastName: 'MacKnight',
-            email: 'lmacknight6@timesonline.co.uk',
-            gender: 'Male',
-            avatar: 'https://robohash.org/doloresvitaeadipisci.png?size=100x100&set=set1',
-            onlineStatus: 'online',
-        },
-    },
-    {
-        id: 11,
-        title: 'Lunar Assassin',
-        category: 'Hat',
-        price: 154.68,
-        isFavorite: false,
-        createdAt: 1677163125000,
-        theme: 'Light',
-        tier: 'Premium',
-        imageId: 18,
-        author: {
-            firstName: 'Dag',
-            lastName: 'Sang',
-            email: 'dsangu@businesswire.com',
-            gender: 'Male',
-            avatar: 'https://robohash.org/commodipraesentiumomnis.png?size=100x100&set=set1',
-            onlineStatus: 'online',
-        },
-    },
-    {
-        id: 12,
-        title: 'Laser Assassin',
-        category: 'Mythic',
-        price: 27.49,
-        isFavorite: true,
-        createdAt: 1650577141000,
-        theme: 'Light',
-        tier: 'Premium',
-        imageId: 12,
-        author: {
-            firstName: 'Cindi',
-            lastName: 'Keyworth',
-            email: 'ckeyworth2@chronoengine.com',
-            gender: 'Female',
-            avatar: 'https://robohash.org/expeditanumquamodio.png?size=100x100&set=set1',
-            onlineStatus: 'online',
-        },
-    },
-];
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import './resultPanel.css';
+import { fetchResults } from '../../redux/resultReducer';
+import { useEffect, useMemo, useRef } from 'react';
+import CardSkeleton from '../CardSkeleton';
 
 const ResultPanel = () => {
+    const scrollPanelRef = useRef<HTMLDivElement>(null);
+    const { data, loading, error, nextPage, hasNext } = useAppSelector((state) => state.result);
+    const filters = useAppSelector((state) => state.filter);
+    const dispatch = useAppDispatch();
+
+    const handleViewMoreClick = () => {
+        dispatch(
+            fetchResults({
+                filters,
+                nextPage,
+            }),
+        );
+    };
+
+    const skeletonCards = useMemo(
+        () =>
+            loading ? (
+                <>
+                    <CardSkeleton />
+                    <CardSkeleton />
+                    <CardSkeleton />
+                    <CardSkeleton />
+                    <CardSkeleton />
+                    <CardSkeleton />
+                    <CardSkeleton />
+                    <CardSkeleton />
+                </>
+            ) : null,
+        [loading],
+    );
+
+    useEffect(() => {
+        if (scrollPanelRef.current) {
+            scrollPanelRef.current.scrollTop = scrollPanelRef.current.scrollHeight;
+        }
+    }, [loading]);
+
     return (
-        <Row>
-            {cards.map((card: CardProps) => (
-                <Card key={card.id} {...card} />
-            ))}
-        </Row>
+        <>
+            <div>
+                <div className='scroll-panel' ref={scrollPanelRef}>
+                    <Row>
+                        {data.length ? (
+                            data.map((card: CardProps) => <Card key={card.id} {...card} />)
+                        ) : (
+                            <>
+                                {!error && (
+                                    <div className='text-center w-100 py-5 text-white'>
+                                        Sorry for the inconvenience, but there are no results to show.
+                                    </div>
+                                )}
+                                {error && (
+                                    <Alert variant='danger' className='w-100 text-center'>
+                                        Something went wrong. Please try again.
+                                    </Alert>
+                                )}
+                            </>
+                        )}
+                        {skeletonCards}
+                    </Row>
+                </div>
+                {data.length && hasNext && (
+                    <div className='text-center'>
+                        <Button
+                            disabled={loading}
+                            variant='primary'
+                            className='w-50 py-3 mt-4'
+                            onClick={handleViewMoreClick}
+                        >
+                            View more
+                        </Button>
+                    </div>
+                )}
+            </div>
+        </>
     );
 };
 

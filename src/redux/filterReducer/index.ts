@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface FilterState {
+export interface FilterState {
     keyword: string;
     tier: string;
     sortByTime: string;
@@ -10,8 +10,8 @@ interface FilterState {
 const initialState: FilterState = {
     keyword: '',
     tier: '',
-    sortByPrice: 'highest',
-    sortByTime: 'latest',
+    sortByPrice: 'Latest',
+    sortByTime: 'Highest',
 };
 
 const filterSlice = createSlice({
@@ -30,9 +30,15 @@ const filterSlice = createSlice({
         setSortByPrice(state: any, action: PayloadAction<string>) {
             state.sortByPrice = action.payload;
         },
+        resetFilter(state: any) {
+            state.keyword = '';
+            state.tier = '';
+            state.sortByPrice = 'Latest';
+            state.sortByTime = 'Highest';
+        }
     },
 });
 
-export const { setKeyword, setSortByPrice, setSortByTime, setTier } = filterSlice.actions;
+export const { setKeyword, setSortByPrice, setSortByTime, setTier, resetFilter } = filterSlice.actions;
 
 export default filterSlice.reducer;

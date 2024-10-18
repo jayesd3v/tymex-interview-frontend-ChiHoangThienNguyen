@@ -1,0 +1,19 @@
+.scroll-panel {
+    max-height: 800px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.scroll-panel::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scroll-panel::-webkit-scrollbar-track {
+    background: #777;
+    border-radius: 20px;
+}
+
+.scroll-panel::-webkit-scrollbar-thumb {
+    background-color: #FFCC21;
+    border-radius: 20px;
+}

@@ -28,6 +28,10 @@
     background: #434343;
 }
 
+.author .avatar .status.busy {
+    background: #d42d2d;
+}
+
 .author .avatar img {
     width: 100%;
 }

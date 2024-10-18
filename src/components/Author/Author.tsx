@@ -16,7 +16,7 @@ const Author = ({ firstName, lastName, email, avatar, onlineStatus, classNames }
         <div className={clsx('author d-flex', classNames)}>
             <div className='avatar'>
                 <img src={avatar} alt='avatar' />
-                <div className={clsx('status', onlineStatus)}></div>
+                <div className={clsx('status', onlineStatus)} title={onlineStatus}></div>
             </div>
             <div className='name d-flex align-items-center ms-2'>
                 {firstName} {lastName}
