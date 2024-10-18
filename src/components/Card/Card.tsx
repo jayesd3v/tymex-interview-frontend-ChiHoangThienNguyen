@@ -16,21 +16,21 @@ export interface CardProps {
     author: AuthorProps;
 }
 
-const Card = ({ id, title, category, price, isFavorite, createdAt, theme, tier, imageId, author }: CardProps) => {
+const Card = ({ title, category, price, isFavorite, theme, tier, imageId, author }: CardProps) => {
     return (
         <Col xs={12} md={6} lg={4} xl={3}>
             <div className='character-card p-2 rounded mb-3'>
                 <div className={clsx('theme', theme.toLowerCase())}>
-                    <div className='character thedj'></div>
+                    <div className='character' style={{ backgroundImage: `url(/images/${imageId}.png)` }}></div>
                     <div className='category'>{category}</div>
                     <div className={clsx('is-favorite', isFavorite && 'active')}>
-                        <img src='/heart.svg' />
+                        <img src='/heart.svg' alt='love' />
                     </div>
                 </div>
                 <div className='d-flex mt-4'>
-                    <div className='title'>{title}</div>
+                    <div className='title'>[{tier}] {title}</div>
                     <div className='price ms-auto'>
-                        <img src='/logos_ethereum.png' /> {price} ETH
+                        <img src='/logos_ethereum.png' alt='ETH icon' /> {price}
                     </div>
                 </div>
                 <Author classNames='pt-3' {...author} />
