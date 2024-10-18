@@ -1,9 +1,8 @@
-import clsx from 'clsx';
 import { Col, Placeholder } from 'react-bootstrap';
 
 const CardSkeleton = () => {
     return (
-        <Col xs={12} md={6} lg={4} xl={3}>
+        <Col xs={12} md={6} lg={4} xl={3} data-testid='skeleton-card'>
             <div className='character-card p-2 rounded mb-3'>
                 <Placeholder as='div' animation='glow' className='w-100'>
                     <Placeholder

@@ -1,3 +1,5 @@
+/* eslint jsx-a11y/anchor-is-valid: 0 */
+
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import './footer.css';
 
@@ -58,12 +60,12 @@ const Footer = () => {
                             <ul className='list-unstyled'>
                                 <li>
                                     <a href='#'>
-                                        <img src='/phone.png' /> 012345678910
+                                        <img src='/phone.png' alt='phone' /> 012345678910
                                     </a>
                                 </li>
                                 <li>
                                     <a href='#'>
-                                        <img src='/mail.png' /> tymex-talent@tyme.com
+                                        <img src='/mail.png' alt='email' /> tymex-talent@tyme.com
                                     </a>
                                 </li>
                             </ul>

@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header tests snapshot test 1`] = `
+<div>
+  <nav
+    class="bg-body-tertiary navbar navbar-expand-lg navbar-light fixed-top"
+  >
+    <div
+      class="container"
+    >
+      <button
+        aria-controls="navbarScroll"
+        aria-label="Toggle navigation"
+        class="navbar-toggler collapsed"
+        type="button"
+      >
+        <span
+          class="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        class="navbar-collapse collapse"
+        id="navbarScroll"
+      >
+        <div
+          class="me-auto my-2 my-lg-0 navbar-nav navbar-nav-scroll"
+        >
+          <a
+            class="nav-link"
+            data-rr-ui-event-key="/"
+            href="/"
+          >
+            HOME
+          </a>
+          <a
+            class="nav-link"
+            data-rr-ui-event-key="/"
+            href="/"
+          >
+            ABOUT US
+          </a>
+          <a
+            class="nav-link"
+            data-rr-ui-event-key="/"
+            href="/"
+          >
+            OUR TEAMS
+          </a>
+          <a
+            class="nav-link"
+            data-rr-ui-event-key="/marketplace"
+            href="/marketplace"
+          >
+            MARKETPLACE
+          </a>
+          <a
+            class="nav-link"
+            data-rr-ui-event-key="/"
+            href="/"
+          >
+            WHITEPAPER
+          </a>
+        </div>
+        <form
+          class="d-flex"
+        >
+          <button
+            class="btn btn-primary"
+            type="button"
+          >
+            Connect Wallet
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</div>
+`;

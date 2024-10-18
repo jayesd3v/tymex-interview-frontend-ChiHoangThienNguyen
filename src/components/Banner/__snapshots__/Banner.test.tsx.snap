@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Banner tests snapshot test 1`] = `
+<div>
+  <div
+    class="banner"
+  >
+    <div
+      class="new-arrival"
+    >
+      <img
+        alt="new-arrival"
+        src="/new-arrival.png"
+      />
+    </div>
+    <div
+      class="banner-holder"
+    >
+      <div
+        class="pt-3 pt-xl-3 container"
+      >
+        <div
+          class="mobile-scrollable-section pt-5 pb-5 ps-5"
+        >
+          <div
+            class="d-flex"
+          >
+            <div
+              class="new-character-tile me-5 d-lg-none"
+            >
+              <div
+                class="character thedj"
+              />
+              <div
+                class="name text-center"
+              >
+                THE DJ
+              </div>
+            </div>
+            <div
+              class="new-character-tile me-5"
+            >
+              <div
+                class="character assassin"
+              />
+              <div
+                class="name text-center"
+              >
+                ASSASSIN
+              </div>
+            </div>
+            <div
+              class="new-character-tile me-5"
+            >
+              <div
+                class="character basketball-girl"
+              />
+              <div
+                class="name text-center"
+              >
+                BASKETBALL GIRL
+              </div>
+            </div>
+            <div
+              class="new-character-tile me-5"
+            >
+              <div
+                class="character mafia-england"
+              />
+              <div
+                class="name text-center"
+              >
+                MAFIA ENGLAND
+              </div>
+            </div>
+            <div
+              class="new-character-tile me-5"
+            >
+              <div
+                class="character neon-guy"
+              />
+              <div
+                class="name text-center"
+              >
+                NEON GUY
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="d-none d-lg-block spotlight-character"
+        >
+          <div
+            class="image"
+            style="background-image: url(/thedj.png);"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
