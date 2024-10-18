@@ -91,10 +91,6 @@ select.form-select:focus {
     background-image: url(/public/neon-guy.png);
 }
 
-.character-card .image {
-    height: 300px;
-}
-
 /* sm */
 @media only screen and (min-width: 576px) {
     .banner {
@@ -108,8 +104,15 @@ select.form-select:focus {
         height: 600px;
     }
 
-    .character-card .image {
+    .character-card .theme {
         height: 200px;
+    }
+
+    .character-card .title {
+        text-overflow: ellipsis;
+        text-wrap: nowrap;
+        overflow: hidden;
+        max-width: 120px
     }
 }
 
@@ -134,10 +137,6 @@ select.form-select:focus {
 
     .bottom-lines {
         background-size: cover;
-    }
-
-    .character-card .image {
-        height: 150px;
     }
 }
 
