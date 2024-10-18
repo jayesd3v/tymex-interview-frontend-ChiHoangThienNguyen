@@ -32,9 +32,33 @@ body {
     height: 400px;
 }
 
-input[type=text], input[type=email] {
+input[type='text'],
+input[type='email'],
+select.form-select {
     border: 1px solid #fff;
     color: #fff;
+    background: transparent;
+}
+
+select option {
+    background: #333;
+    color: #fff;
+}
+
+input[type='text']:focus,
+input[type='email']:focus,
+select.form-select:focus {
+    background: unset !important;
+    color: #fff !important;
+}
+
+.btn-primary {
+    background-image: linear-gradient(to right, #8e44ad, #ff69b4);
+    border: 0;
+}
+
+.form-label {
+    color: #ccc;
 }
 
 .form-control {
@@ -45,6 +69,30 @@ input[type=text], input[type=email] {
 .form-control::placeholder {
     background: transparent;
     color: #ccc;
+}
+
+.thedj {
+    background-image: url(/public/thedj.png);
+}
+
+.assassin {
+    background-image: url(/public/assassin.png);
+}
+
+.basketball-girl {
+    background-image: url(/public/basketball-girl.png);
+}
+
+.mafia-england {
+    background-image: url(/public/mafia-england.png);
+}
+
+.neon-guy {
+    background-image: url(/public/neon-guy.png);
+}
+
+.character-card .image {
+    height: 300px;
 }
 
 /* sm */
@@ -58,6 +106,10 @@ input[type=text], input[type=email] {
 @media only screen and (min-width: 768px) {
     .banner {
         height: 600px;
+    }
+
+    .character-card .image {
+        height: 200px;
     }
 }
 
@@ -82,6 +134,10 @@ input[type=text], input[type=email] {
 
     .bottom-lines {
         background-size: cover;
+    }
+
+    .character-card .image {
+        height: 150px;
     }
 }
 
