@@ -1,0 +1,33 @@
+.author .avatar {
+    width: 32px;
+    height: 32px;
+    background: #fff;
+    border-radius: 32px;
+    position: relative;
+}
+
+.author .avatar .status {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border: 2px solid #000;
+}
+
+.author .avatar .status.idle {
+    background: #e0b507;
+}
+
+.author .avatar .status.online {
+    background: #60d535;
+}
+
+.author .avatar .status.offline {
+    background: #434343;
+}
+
+.author .avatar img {
+    width: 100%;
+}
