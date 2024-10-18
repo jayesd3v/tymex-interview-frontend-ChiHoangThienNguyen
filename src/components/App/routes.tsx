@@ -1,7 +1,7 @@
 import HomePage from '../../pages/Home';
 import MarketplacePage from '../../pages/Marketplace';
 
-export default [
+const routes = [
     {
         path: '/',
         element: <HomePage />,
@@ -11,3 +11,5 @@ export default [
         element: <MarketplacePage />,
     },
 ];
+
+export default routes;
