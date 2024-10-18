@@ -1,8 +1,8 @@
 import { Container } from 'react-bootstrap';
 import NewCharacterTile from '../NewCharacterTile';
-import { NewCharacterTileProps } from '../NewCharacterTile/index.d';
 import './banner.css';
 import clsx from 'clsx';
+import { NewCharacterTileProps } from '../NewCharacterTile/NewcharacterTile';
 
 const NEW_CHARACTERS: NewCharacterTileProps[] = [
     {
@@ -45,7 +45,7 @@ const Banner = () => {
         );
 
     const renderSpotlightCharacter = () => {
-        const { character, name } = NEW_CHARACTERS[0];
+        const { character } = NEW_CHARACTERS[0];
         return (
             <div className='d-none d-lg-block spotlight-character'>
                 <div className='image' style={{ backgroundImage: `url(/${character}.png)` }}></div>

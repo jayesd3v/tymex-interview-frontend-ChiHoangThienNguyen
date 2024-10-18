@@ -6,7 +6,7 @@ const Footer = () => {
         <footer className='pb-5 pt-5'>
             <Container>
                 <Row>
-                    <Col xs={12} md={6} lg={4}>
+                    <Col xs={12} md={5} lg={4}>
                         <div className='section mb-5'>
                             <div className='title mb-4'>NAVIGATION</div>
                             <Row>
@@ -52,7 +52,7 @@ const Footer = () => {
                             </Row>
                         </div>
                     </Col>
-                    <Col xs={12} md={{ span: 4, offset: 2 }} lg={{ span: 2, offset: 1 }}>
+                    <Col xs={12} md={{ span: 5, offset: 1 }} lg={{ span: 4, offset: 0 }}>
                         <div className='section mb-5'>
                             <div className='title mb-4'>CONTACT US</div>
                             <ul className='list-unstyled'>
@@ -69,7 +69,7 @@ const Footer = () => {
                             </ul>
                         </div>
                     </Col>
-                    <Col xs={12} lg={{ span: 4, offset: 1 }}>
+                    <Col xs={12} lg={{ span: 4, offset: 0 }}>
                         <div className='section mb-5'>
                             <div className='title mb-4'>SUBSCRIBE TO RECEIVE OUR LATEST UPDATE</div>
                             <Form>

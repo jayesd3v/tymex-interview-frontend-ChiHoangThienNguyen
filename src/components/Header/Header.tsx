@@ -15,7 +15,7 @@ const Header = () => {
                         <Nav.Link href='/'>WHITEPAPER</Nav.Link>
                     </Nav>
                     <Form className='d-flex'>
-                        <Button variant='outline-success'>Connect Wallet</Button>
+                        <Button variant='primary'>Connect Wallet</Button>
                     </Form>
                 </Navbar.Collapse>
             </Container>
