@@ -5,7 +5,7 @@
 }
 
 .character-card .theme {
-    height: 150px;
+    height: 250px;
     position: relative;
 }
 
@@ -61,10 +61,6 @@
     right: 10px;
     opacity: .2;
     transition: all .3s;
-}
-
-.character-card .theme .is-favorite::active {
-
 }
 
 .character-card .theme .is-favorite.active {
